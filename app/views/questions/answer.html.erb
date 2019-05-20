@@ -1,0 +1,51 @@
+<h1>Welcome on Stupid Coaching 🤯</h1>
+
+<% def coach_answer(your_message)
+  if your_message == "I am going to work right now!"
+    return "Great!"
+  elsif your_message.include? "?"
+    return "Silly question, get dressed and go to work!"
+  else
+    return "I don't care, get dressed and go to work!"
+  end
+end %>
+<!--
+<%= coach_answer(params[:question]) %>
+ -->
+<!-- <div>
+  <%= params[:question] %>
+  <p><em>- you</em></p>
+</div>
+<div>
+  <%= coach_answer(params[:question]) %>
+  <p><em>- your stupid coach</em></p>
+</div> -->
+
+
+<div class="notification">
+  <img src='https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/gqon2jj9cj7tss7gpvzb.jpg' class="avatar-large"/>
+  <div class="notification-content">
+    <p><small>You</small></p>
+    <p><%= params[:question] %></p>
+  </div>
+
+  <div class="notification-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+</div>
+
+<div class="notification">
+  <img src='https://c.wallhere.com/photos/f9/58/pig_little_pig_countryside_hooves_close_up_face-1035887.jpg!d' class="avatar-large"/>
+  <div class="notification-content">
+    <p><small>Your stupid coach</small></p>
+    <p><%= coach_answer(params[:question]) %></p>
+  </div>
+
+  <div class="notification-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+</div>
+
+<%= link_to "Ask a new question", ask_path %>
